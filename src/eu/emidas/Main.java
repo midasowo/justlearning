@@ -1,14 +1,23 @@
 package eu.emidas;
 
+import java.util.Scanner;
+
 public class Main {
-public int cyfra=64;
 
     public static void main(String[] args) {
-	System.out.println("Cześć Kamil");
-    int bajt = 129;
-        System.out.println(bajt+2);
-        String slowo = "kanapka";
-        String s = slowo.toUpperCase();
-        System.out.println(s    );
+    Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj imię");
+        String name = scanner.nextLine();
+        System.out.println("Cześć " + name);
+
+        if (!name.isEmpty() && !name.endsWith("a") || name.equals("Barnaba") || name.equals("Kuba")) {
+            System.out.println("Jesteś mężczyzną");
+        } else if (!name.isEmpty() && name.endsWith("a")) {
+            System.out.println("Jesteś kobietą");
+        } else {
+            System.out.println("Podaj imię, imię nie może być puste.");
+        }
+
     }
 }
